@@ -39,9 +39,9 @@ def main() -> int:
         kinds = [m.type.value if hasattr(m.type, "value") else str(m.type) for m in messages]
         print(f"=== {cls.__name__} {json.dumps(params)} -> {kinds}")
         for m in messages:
-            if "text" in str(m.type):
+            if hasattr(m.message, "text"):
                 print(m.message.text[:600])
-            else:
+            elif hasattr(m.message, "json_object"):
                 payload = m.message.json_object
                 print(f"  json keys: {sorted(payload)[:12]}{' ...' if len(payload) > 12 else ''}")
         if not messages:
