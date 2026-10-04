@@ -1,0 +1,72 @@
+identity:
+  name: indicator_history
+  author: fxmacrodata
+  label:
+    en_US: Indicator history
+    zh_Hans: 指标历史数据
+description:
+  human:
+    en_US: Get the release history of one macroeconomic indicator for a currency, such as USD inflation or EUR policy rate.
+    zh_Hans: 获取某一货币单个宏观经济指标的发布历史，例如美元通胀或欧元政策利率。
+  llm: Get historical releases of one macroeconomic indicator for one currency (for example USD inflation, USD non_farm_payrolls, EUR policy_rate). Rows are most recent first, each with date, val and announcement time. Use data_catalogue first if you do not know the indicator slug. Without an API key only USD is available, delayed 15 minutes and limited to the last 90 days.
+extra:
+  python:
+    source: tools/indicator_history.py
+parameters:
+  - name: currency
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Currency
+      zh_Hans: 货币
+    human_description:
+      en_US: Three-letter currency code, for example USD, EUR, GBP or JPY.
+      zh_Hans: 三位货币代码，例如 USD、EUR、GBP 或 JPY。
+    llm_description: Three-letter currency code. One of AUD, BRL, CAD, CHF, CNH, CNY, DKK, EUR, GBP, HUF, ILS, JPY, KRW, MYR, NGN, NOK, NZD, PEN, SEK, THB, TWD, USD.
+  - name: indicator
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Indicator
+      zh_Hans: 指标
+    human_description:
+      en_US: Indicator slug, for example inflation, policy_rate, unemployment, gdp or non_farm_payrolls.
+      zh_Hans: 指标代码，例如 inflation、policy_rate、unemployment、gdp 或 non_farm_payrolls。
+    llm_description: Indicator slug in lower snake case, for example inflation, core_inflation, policy_rate, unemployment, gdp, non_farm_payrolls, retail_sales, gov_bond_10y. The data_catalogue tool lists every slug for a currency.
+  - name: start_date
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: Start date
+      zh_Hans: 开始日期
+    human_description:
+      en_US: Optional start date, YYYY-MM-DD.
+      zh_Hans: 可选开始日期，格式 YYYY-MM-DD。
+    llm_description: Optional inclusive start date in YYYY-MM-DD format.
+  - name: end_date
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: End date
+      zh_Hans: 结束日期
+    human_description:
+      en_US: Optional end date, YYYY-MM-DD. Defaults to today.
+      zh_Hans: 可选结束日期，格式 YYYY-MM-DD，默认为今天。
+    llm_description: Optional inclusive end date in YYYY-MM-DD format. Defaults to today.
+  - name: limit
+    type: number
+    required: false
+    form: llm
+    min: 1
+    max: 100
+    label:
+      en_US: Limit
+      zh_Hans: 数量上限
+    human_description:
+      en_US: Maximum rows to return, 1 to 100. Defaults to 20.
+      zh_Hans: 返回的最大行数，1 到 100，默认 20。
+    llm_description: Maximum number of rows to return, from 1 to 100, most recent first. Defaults to 20.

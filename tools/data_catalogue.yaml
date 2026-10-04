@@ -1,0 +1,26 @@
+identity:
+  name: data_catalogue
+  author: fxmacrodata
+  label:
+    en_US: Data catalogue
+    zh_Hans: 数据目录
+description:
+  human:
+    en_US: List the macroeconomic indicators available for a currency, with units, frequency, source and coverage.
+    zh_Hans: 列出某一货币可用的宏观经济指标，包括单位、频率、来源和覆盖范围。
+  llm: List every macroeconomic indicator available for one currency, keyed by indicator slug, with name, unit, frequency, source and coverage details. Call this to find the right slug before calling indicator_history or release_calendar. Without an API key only USD is available.
+extra:
+  python:
+    source: tools/data_catalogue.py
+parameters:
+  - name: currency
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Currency
+      zh_Hans: 货币
+    human_description:
+      en_US: Three-letter currency code, for example USD, EUR, GBP or JPY.
+      zh_Hans: 三位货币代码，例如 USD、EUR、GBP 或 JPY。
+    llm_description: Three-letter currency code. One of AUD, BRL, CAD, CHF, CNH, CNY, DKK, EUR, GBP, HUF, ILS, JPY, KRW, MYR, NGN, NOK, NZD, PEN, SEK, THB, TWD, USD.

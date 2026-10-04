@@ -1,0 +1,70 @@
+identity:
+  name: release_calendar
+  author: fxmacrodata
+  label:
+    en_US: Release calendar
+    zh_Hans: 数据发布日历
+description:
+  human:
+    en_US: Get upcoming scheduled release dates and times for a currency's economic data.
+    zh_Hans: 获取某一货币经济数据即将发布的日期和时间。
+  llm: Get upcoming scheduled economic data releases for one currency, each with release slug, name and announcement time in UTC and local time. Optionally filter to one indicator or a date range. Without an API key only USD is available.
+extra:
+  python:
+    source: tools/release_calendar.py
+parameters:
+  - name: currency
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Currency
+      zh_Hans: 货币
+    human_description:
+      en_US: Three-letter currency code, for example USD, EUR, GBP or JPY.
+      zh_Hans: 三位货币代码，例如 USD、EUR、GBP 或 JPY。
+    llm_description: Three-letter currency code. One of AUD, BRL, CAD, CHF, CNH, CNY, DKK, EUR, GBP, HUF, ILS, JPY, KRW, MYR, NGN, NOK, NZD, PEN, SEK, THB, TWD, USD.
+  - name: indicator
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: Indicator
+      zh_Hans: 指标
+    human_description:
+      en_US: Optional indicator slug to filter on, for example inflation or non_farm_payrolls.
+      zh_Hans: 可选的指标代码筛选，例如 inflation 或 non_farm_payrolls。
+    llm_description: Optional indicator slug to filter on, for example inflation, gdp, unemployment, non_farm_payrolls. Leave empty for all releases.
+  - name: start_date
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: Start date
+      zh_Hans: 开始日期
+    human_description:
+      en_US: Optional start date, YYYY-MM-DD.
+      zh_Hans: 可选开始日期，格式 YYYY-MM-DD。
+    llm_description: Optional inclusive start date in YYYY-MM-DD format.
+  - name: end_date
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: End date
+      zh_Hans: 结束日期
+    human_description:
+      en_US: Optional end date, YYYY-MM-DD.
+      zh_Hans: 可选结束日期，格式 YYYY-MM-DD。
+    llm_description: Optional inclusive end date in YYYY-MM-DD format.
+  - name: timezone
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: Timezone
+      zh_Hans: 时区
+    human_description:
+      en_US: Optional IANA timezone for an extra converted time field, for example Europe/London.
+      zh_Hans: 可选 IANA 时区，用于额外的时间换算字段，例如 Asia/Shanghai。
+    llm_description: Optional IANA timezone name, for example Europe/London or Asia/Tokyo. Adds a converted timestamp to each row.
