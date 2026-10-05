@@ -21,7 +21,7 @@ Each tool returns the API's JSON response unchanged, plus a short text summary f
 
 1. Install the plugin from the Dify Marketplace (Plugins > Marketplace, search "FXMacroData").
 2. Go to Tools > FXMacroData > Authorize.
-3. Leave the API key empty to use USD data, or paste your FXMacroData API key to unlock everything. Keys are on the [subscribe page](https://fxmacrodata.com/subscribe).
+3. Leave the API key empty to use USD data, or paste your FXMacroData API key to unlock everything. Keys are on the [subscribe page](https://fxmacrodata.com/subscribe?utm_source=github&utm_medium=referral&utm_campaign=dify-plugin-fxmacrodata&utm_content=readme).
 
 The key is checked with one small request when you save it.
 
@@ -56,7 +56,7 @@ Add a tool node and fill the parameters directly, e.g. `indicator_history` with 
 
 ## Connection
 
-All requests are HTTPS GET to one fixed host, `https://api.fxmacrodata.com/v1`, with a 20 second timeout. The Dify instance needs outbound access to that host. No other hosts are contacted. API reference: https://fxmacrodata.com/api-docs
+All requests are HTTPS GET to one fixed host, `https://api.fxmacrodata.com/v1`, with a 20 second timeout. The Dify instance needs outbound access to that host. No other hosts are contacted. API reference: https://fxmacrodata.com/api-docs?utm_source=github&utm_medium=referral&utm_campaign=dify-plugin-fxmacrodata&utm_content=readme
 
 ## Privacy
 

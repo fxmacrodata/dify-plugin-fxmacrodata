@@ -15,7 +15,7 @@ Nothing. The plugin does not collect, store or log user data. Your API key is st
 
 ## Third parties
 
-Requests go only to FXMacroData (api.fxmacrodata.com). The data is not shared with any other service by the plugin. FXMacroData's handling of API requests is covered by its privacy policy: https://fxmacrodata.com/privacy
+Requests go only to FXMacroData (api.fxmacrodata.com). The data is not shared with any other service by the plugin. FXMacroData's handling of API requests is covered by its privacy policy: https://fxmacrodata.com/privacy?utm_source=github&utm_medium=referral&utm_campaign=dify-plugin-fxmacrodata&utm_content=privacy
 
 ## Contact
 
