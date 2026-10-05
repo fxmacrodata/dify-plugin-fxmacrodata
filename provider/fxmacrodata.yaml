@@ -23,7 +23,7 @@ credentials_for_provider:
     help:
       en_US: Without a key, USD indicators and the USD calendar work, with a 15-minute delay and 90 days of history. A key unlocks every currency, full history, real-time releases and FX rates.
       zh_Hans: 无 Key 时可使用美元指标和美元日历，数据延迟 15 分钟，历史数据限 90 天。使用 Key 可获取全部货币、完整历史、实时发布数据和外汇汇率。
-    url: https://fxmacrodata.com/subscribe
+    url: https://fxmacrodata.com/subscribe?utm_source=dify&utm_medium=integration&utm_campaign=dify-plugin-fxmacrodata&utm_content=subscribe
 extra:
   python:
     source: provider/fxmacrodata.py

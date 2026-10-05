@@ -34,7 +34,7 @@ class ForexRatesTool(Tool):
         if not api_key:
             yield self.create_text_message(
                 "FX rates need an FXMacroData API key. Add one under Tools > FXMacroData > Authorize. "
-                "Plans: https://fxmacrodata.com/subscribe"
+                "Plans: https://fxmacrodata.com/subscribe?utm_source=dify&utm_medium=integration&utm_campaign=dify-plugin-fxmacrodata&utm_content=subscribe"
             )
             return
 
